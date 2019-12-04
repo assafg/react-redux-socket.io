@@ -1,10 +1,10 @@
-import { configureStore, getDefaultMiddleware } from 'redux-starter-kit';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import io from 'socket.io-client';
 import logger from 'redux-logger';
 import throttle from 'lodash/throttle';
 import preloadedState from './preloadedState';
 import { loadState, saveState } from './localStorage';
-import simpleValuesSlice, { updateValue, SimpleValue } from './reducers';
+import simpleValuesSlice, { updateValue } from './reducers';
 
 const persistedState = loadState();
 
@@ -25,9 +25,13 @@ store.subscribe(
 );
 
 // Register for socket notifications
-const tickerSocket = io('http://localhost:4000/simpleValue');
-tickerSocket.on('message', (msg: SimpleValue) => {
-    store.dispatch(updateValue(msg));
+const tickerSocket = io('http://127.0.0.1:4000/simpleValue');
+tickerSocket.on('message', (msg: string) => {
+    store.dispatch(
+        updateValue({
+            value: msg,
+        })
+    );
 });
 
 export default store;

@@ -1,17 +1,17 @@
-import { createSlice, PayloadAction } from 'redux-starter-kit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface SimpleValue {
-    value: number;
+    value: string;
 }
 
-const initialState: SimpleValue = { value: 0 };
+const initialState: SimpleValue = { value: '' };
 
 const simpleValuesSlice = createSlice({
     name: 'simpleValue',
     initialState,
     reducers: {
         updateValue: (state, action: PayloadAction<SimpleValue>) => {
-            return { ...state, ...action.payload };
+            return action.payload;
         },
     },
 });

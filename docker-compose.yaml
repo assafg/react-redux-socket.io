@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    ports:
+      - "4369:4369"
+      - "5672:5672"
+      - "25672:25672"
+      - "15672:15672"
+
+  socketserver:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    depends_on:
+      - rabbitmq
+    ports:
+      - "4000:4000"
+    links:
+      - rabbitmq
+
+  webapp:
+    build:
+      context: ./client-app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
