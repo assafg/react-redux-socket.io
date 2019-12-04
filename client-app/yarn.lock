@@ -1237,6 +1237,18 @@
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
 
+"@reduxjs/toolkit@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@reduxjs/toolkit/-/toolkit-1.1.0.tgz#16ee944782e8f716a9a062f55bea3e2435f3d490"
+  integrity sha512-ttAoBieIxa/08MmL/SFKCx/xXJVF7ALolun5yNaPSixA73ueEUUYQhupmxlOJ/n6HgN3i4xs8HMgkm6XT4G6sA==
+  dependencies:
+    immer "^4.0.1"
+    redux "^4.0.0"
+    redux-devtools-extension "^2.13.8"
+    redux-immutable-state-invariant "^2.1.0"
+    redux-thunk "^2.3.0"
+    reselect "^4.0.0"
+
 "@storybook/addon-actions@5.2.1", "@storybook/addon-actions@^5.2.1":
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-5.2.1.tgz#2096e7f938b289be48af6f0adfd620997e7a420c"
@@ -10668,18 +10680,6 @@ redux-logger@^3.0.6:
   integrity sha1-91VZZvMJjzyIYExEnPC69XeCdL8=
   dependencies:
     deep-diff "^0.3.5"
-
-redux-starter-kit@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/redux-starter-kit/-/redux-starter-kit-1.0.1.tgz#5db053934682a5c08c928f41f321874db1057e0f"
-  integrity sha512-hn4sCfCK/nBCsNG0DjKp6wfXbmJvDEbo4CoQ2490rA0YnTwX1DtiC+p+25DDB/vo3lk/zk1YC/aFS5vBr3VV5A==
-  dependencies:
-    immer "^4.0.1"
-    redux "^4.0.0"
-    redux-devtools-extension "^2.13.8"
-    redux-immutable-state-invariant "^2.1.0"
-    redux-thunk "^2.3.0"
-    reselect "^4.0.0"
 
 redux-thunk@^2.3.0:
   version "2.3.0"
